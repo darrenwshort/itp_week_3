@@ -53,8 +53,8 @@ print(type(sheet1))
 # #verify
 # type(my_sheet)  # Result-->  <class 'openpyxl.worksheet.worksheet.Worksheet'>
 
-apple_cell = sheet1['b1']
-print(apple_cell.value)
+# apple_cell = sheet1['b1']
+# print(apple_cell.value)
 
 
 # # Cell objects have a "value" member variable with the content of that cell.
@@ -81,6 +81,11 @@ for i in range(1, 8):
 print("\nBusiness is booming!!!")
 print()
 
+
+for i in range(1, 8):
+    for j in 1, 3, 2: # loop through column sequence A, C, then B (specific order)
+        print(sheet1.cell(row = i, column = j).value, end=" ")
+    print()
 # The code may be difficult to understand at first, but notice that in 'row = i', the 'i' will increase by 1 until it reaches 8, thus printing out each value in column 2.  The first 'i', after the 'print(' is to show the correlation between 'i' and row being printed.
 
 
