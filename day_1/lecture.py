@@ -46,15 +46,15 @@ print(type(wb_sheetnames))
 print(wb_sheetnames)
 
 
-my_first_sheet = wb_sheetnames[0]
-print("my first sheet has a name of " + my_first_sheet)
-print(type(my_first_sheet))
+sheet1 = wb.get_sheet_by_name('Sheet1')
+# print("my first sheet has a name of " + my_first_sheet)
+print(type(sheet1))
 # my_sheet = my_workbook.get_sheet_by_name('Sheet 1')
 # #verify
 # type(my_sheet)  # Result-->  <class 'openpyxl.worksheet.worksheet.Worksheet'>
 
-apple_cell = my_first_sheet['b1']
-print(apple_cell)
+apple_cell = sheet1['b1']
+print(apple_cell.value)
 
 
 # # Cell objects have a "value" member variable with the content of that cell.
