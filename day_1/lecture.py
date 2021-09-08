@@ -75,9 +75,13 @@ print(apple_cell.value)
 
 
 # #Python can be used to loop through the cells on your spreadsheet and manipulate data automatically.
-# for i in range(1, 8):
-#     print(i, my_sheet.cell(row = i, column =2).value)
-# #The code may be difficult to understand at first, but notice that in 'row = i', the 'i' will increase by 1 until it reaches 8, thus printing out each value in column 2.  The first 'i', after the 'print(' is to show the correlation between 'i' and row being printed.
+print()
+for i in range(1, 8):
+    print(f"On {sheet1.cell(row = i, column = 1).value}, we sold {sheet1.cell(row = i, column = 3).value} {sheet1.cell(row = i, column = 2).value}.")
+print("\nBusiness is booming!!!")
+print()
+
+# The code may be difficult to understand at first, but notice that in 'row = i', the 'i' will increase by 1 until it reaches 8, thus printing out each value in column 2.  The first 'i', after the 'print(' is to show the correlation between 'i' and row being printed.
 
 
 # # READ DATA
