@@ -81,7 +81,7 @@ for i in range(1, 8):
 print("\nBusiness is booming!!!")
 print()
 
-
+# testing loops in specific order for column.
 for i in range(1, 8):
     for j in 1, 3, 2: # loop through column sequence A, C, then B (specific order)
         print(sheet1.cell(row = i, column = j).value, end=" ")
