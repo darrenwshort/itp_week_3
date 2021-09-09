@@ -13,19 +13,19 @@ import os
 from openpyxl.workbook import workbook
 
 os.getcwd() #will return the current working directory.
-os.chdir() #will change the current working directory.  <---- PAY SPECIAL ATTENTION TO THIS ONE
+#os.chdir() #will change the current working directory.  <---- PAY SPECIAL ATTENTION TO THIS ONE
 
 #Review--> Absolute paths begin with the root folder, relative paths do not.
 #The . folder represents "this folder", the .. folder represents "the parent folder".
 
-os.path.abspath() #returns an absolute path form of the path passed to it.
-os.path.relpath() #returns the relative path between two paths passed to it.
-os.makedirs() #can make folders.
-os.path.getsize() #returns a file's size.
-os.listdir() #returns a list of strings of filenames.
-os.path.exists() #returns True if the filename passed to it exists.
-os.path.isfile() #and 
-os.path.isdir() #return True if they were passed a filename or file path.
+# os.path.abspath() #returns an absolute path form of the path passed to it.
+# os.path.relpath() #returns the relative path between two paths passed to it.
+# os.makedirs() #can make folders.
+# os.path.getsize() #returns a file's size.
+# os.listdir() #returns a list of strings of filenames.
+# os.path.exists() #returns True if the filename passed to it exists.
+# os.path.isfile() #and 
+# os.path.isdir() #return True if they were passed a filename or file path.
 
 #
 #-----------------BACK TO EXCEL-------------
@@ -40,9 +40,9 @@ my_sheet = my_workbook.get_sheet_by_name('Sheet')
 
 #How to create a NEW, EMPTY Excel document:
 from openpyxl import Workbook
-my_new_workbook = Workbook()
+wb = Workbook()
 #This workbook will always be created with one sheet, which can be accessed using Workbook.active property:
-my_new_worksheet = my_new_workbook.active  #  This value is set to 0 by default
+my_new_worksheet = wb.active  #  This value is set to 0 by default
 
 
 #REVIEW SECTION ON SHEETS --> 
@@ -62,7 +62,7 @@ for sheet in wb:
     print(sheet.title)
 
 # You can create copies of worksheets within a single workbook:
-Workbook.copy_worksheet() method:
+Workbook.copy_worksheet() #method:
 
 source = wb.active
 target = wb.copy_worksheet(source)
@@ -99,11 +99,11 @@ my_sheet['A2'] = 'Pears'
 #Because we know that when we create a blank Excel document, the starting value is 'None', we can clear cell values by setting them to the Python keyword: None 
 
 #How to create a NEW, EMPTY Excel document sheet:
-my_newest_worksheet1 = my_new_workbook.create_sheet("Mysheet")  # insert at the end of the sheets (default)
+my_newest_worksheet1 = wb.create_sheet("Mysheet")  # insert at the end of the sheets (default)
 #or
-my_newest_worksheet2 = my_new_workbook.create_sheet("Mysheet", 0)  # insert at first position
+my_newest_worksheet2 = wb.create_sheet("Mysheet", 0)  # insert at first position
 #or
-my_newest_worksheet3 = my_new_workbook.create_sheet("Mysheet", -1)  # insert at penultimate position
+my_newest_worksheet3 = wb.create_sheet("Mysheet", -1)  # insert at penultimate position
 
 #-------THE REASON WE TALKED ABOUT THE OS MODULE:  ------
 #We need to use the os module to access files on our machine so that we may create, save, and delete Excel files
