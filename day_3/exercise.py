@@ -10,7 +10,8 @@ response = requests.get("https://rickandmortyapi.com/api/character")
 # json.loads() - takes text string and converts it to dict (clean_data)
 clean_data = json.loads(response.text)
 
-# grab only results list from clean_data dict, to work with
+# grab only results list from clean_data dict
+# 'results' is list of character dicts
 results = clean_data['results']
 
 ############## Rick & Morty API exercise ################
