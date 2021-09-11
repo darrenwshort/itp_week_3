@@ -55,10 +55,10 @@ for character in results:
 # delete existing output file before save
 # try-except in case file doesn't exist.
 try:
-    os.remove('./' + output_file)
+    os.remove(output_file)
 except:
     pass
 
 # save workbook to file.
-wb.save(filename = './' + output_file)
+wb.save(filename = output_file)
         
