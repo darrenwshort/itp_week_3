@@ -52,7 +52,11 @@ for character in results:
     counter += 1
 
 # delete existing output file before save
-os.remove('./' + output_file)
+# try-except in case file doesn't exist.
+try:
+    os.remove('./' + output_file)
+except:
+    pass
 
 # save workbook to file.
 wb.save(filename = './' + output_file)
